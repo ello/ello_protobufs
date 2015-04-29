@@ -75,3 +75,98 @@ ElloProtobufs::SomeSpecialService::CreateCarResponse
 # service specific enum to specify the status of the car creation operation -- NOTE: this is preferable to text error messages as it's more discrete and doesn't require parsing
 ElloProtobufs::SomeSpecialService::CreateCarErrorReason
 ```
+
+## Implementation Guide
+
+Below is a simple example of how you might use this gem for
+bi-directional communcation in a service.
+
+```ruby
+# config/initializers/protobuf.rb
+
+Mime::Type.register 'application/octet-stream', :protobuf
+```
+
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  post '/cars' => 'cars#create', as: :cars, defaults: { format: 'protobuf' }
+end
+```
+
+```protobuf
+# definitions/ello_protobufs/car_service/create_car_request.proto
+
+package ElloProtobufs.CarService;
+
+message CreateCarRequest {
+  required string make = 1;
+  required string model = 2;
+  required uint32 year = 3;
+}
+```
+
+```protobuf
+# definitions/ello_protobufs/car_service/create_car_response.proto
+
+package ElloProtobufs.CarService;
+
+message CreateCarRequest {
+  required bool success = 1;
+  optional uint32 id = 2;
+  optional CreateCarFailureReason failure_reason = 3;
+  repeated string errors = 4;
+}
+```
+
+```protobuf
+# definitions/ello_protobufs/car_service/create_car_failure_reason.proto
+
+package ElloProtobufs.CarService;
+
+enum CreateCarFailureReason {
+  UNSPECIFIED = 0;
+  VALIDATION_FAILED = 1;
+}
+```
+
+```ruby
+# app/controllers/cars_controller.rb
+
+class CarsController < ApplicationController
+
+  def create
+    request = ElloProtobufs::CarService::CreateCarRequest.decode_from(request.body)
+    resp = ElloProtobufs::CarService::CreateCarResponse.new
+
+    car = Car.new(car_params)
+
+    if car.save
+      resp.success = true
+      resp.id = car.id
+    else
+      resp.success = false
+      if car.valid?
+        resp.failure_reason = ElloProtobufs::CarService::CreateCarErrorReason::UNSPECIFIED
+      else
+        resp.failure_reason = ElloProtobufs::CarService::CreateCarErrorReason::VALIDATION_FAILED
+        resp.errors = car.errors.full_messages
+      end
+    end
+
+    send_data resp.encode, type: :protobuf
+  end
+
+  private
+
+  def car_params(request)
+    {
+      make: request.make,
+      model: request.model,
+      year: request.year
+    }
+  end
+
+end
+```
