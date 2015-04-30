@@ -96,7 +96,7 @@ end
 ```
 
 ```protobuf
-# definitions/ello_protobufs/car_service/create_car_request.proto
+/* definitions/ello_protobufs/car_service/create_car_request.proto */
 
 package ElloProtobufs.CarService;
 
@@ -108,7 +108,7 @@ message CreateCarRequest {
 ```
 
 ```protobuf
-# definitions/ello_protobufs/car_service/create_car_response.proto
+/* definitions/ello_protobufs/car_service/create_car_response.proto */
 
 package ElloProtobufs.CarService;
 
@@ -121,7 +121,7 @@ message CreateCarRequest {
 ```
 
 ```protobuf
-# definitions/ello_protobufs/car_service/create_car_failure_reason.proto
+/* definitions/ello_protobufs/car_service/create_car_failure_reason.proto */
 
 package ElloProtobufs.CarService;
 
@@ -140,7 +140,7 @@ class CarsController < ApplicationController
     request = ElloProtobufs::CarService::CreateCarRequest.decode_from(request.body)
     resp = ElloProtobufs::CarService::CreateCarResponse.new
 
-    car = Car.new(car_params)
+    car = Car.new(car_params(request))
 
     if car.save
       resp.success = true
