@@ -70,10 +70,10 @@ ElloProtobufs::SomeSpecialService
 ElloProtobufs::SomeSpecialService::CreateCarRequest
 
 # RPC response object containing information about the creation of a car using SomeSpecialService
-ElloProtobufs::SomeSpecialService::CreateCarResponse
+ElloProtobufs::SomeSpecialService::ServiceResponse
 
 # service specific enum to specify the status of the car creation operation -- NOTE: this is preferable to text error messages as it's more discrete and doesn't require parsing
-ElloProtobufs::SomeSpecialService::CreateCarErrorReason
+ElloProtobufs::SomeSpecialService::ServiceFailureReason
 ```
 
 ## Implementation Guide
@@ -115,17 +115,17 @@ package ElloProtobufs.CarService;
 message CreateCarRequest {
   required bool success = 1;
   optional uint32 id = 2;
-  optional CreateCarFailureReason failure_reason = 3;
+  optional ServiceFailureReason failure_reason = 3;
   repeated string errors = 4;
 }
 ```
 
 ```protobuf
-/* definitions/ello_protobufs/car_service/create_car_failure_reason.proto */
+/* definitions/ello_protobufs/car_service/service_failure_reason.proto */
 
 package ElloProtobufs.CarService;
 
-enum CreateCarFailureReason {
+enum ServiceFailureReason {
   UNSPECIFIED = 0;
   VALIDATION_FAILED = 1;
 }
@@ -138,7 +138,7 @@ class CarsController < ApplicationController
 
   def create
     request = ElloProtobufs::CarService::CreateCarRequest.decode_from(request.body)
-    resp = ElloProtobufs::CarService::CreateCarResponse.new
+    resp = ElloProtobufs::CarService::ServiceResponse.new
 
     car = Car.new(car_params(request))
 
@@ -148,9 +148,9 @@ class CarsController < ApplicationController
     else
       resp.success = false
       if car.valid?
-        resp.failure_reason = ElloProtobufs::CarService::CreateCarErrorReason::UNSPECIFIED
+        resp.failure_reason = ElloProtobufs::CarService::ServiceFailureReason::UNSPECIFIED
       else
-        resp.failure_reason = ElloProtobufs::CarService::CreateCarErrorReason::VALIDATION_FAILED
+        resp.failure_reason = ElloProtobufs::CarService::ServiceFailureReason::VALIDATION_FAILED
         resp.errors = car.errors.full_messages
       end
     end

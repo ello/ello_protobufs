@@ -11,7 +11,7 @@ module ElloProtobufs
   # Enum Classes
   #
   class NotificationType < ::Protobuf::Enum
-    define :UNSPECIFIED, 0
+    define :UNSPECIFIED_TYPE, 0
     define :COMMENT_MENTION, 1
     define :FOLLOWER, 2
     define :INVITE_REDEMPTION, 3

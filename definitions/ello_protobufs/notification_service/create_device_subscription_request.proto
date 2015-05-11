@@ -1,0 +1,9 @@
+package ElloProtobufs.NotificationService;
+import 'ello_protobufs/notification_platform.proto';
+
+message CreateDeviceSubscriptionRequest {
+  required NotificationPlatform platform = 1 [default = UNSPECIFIED_PLATFORM];
+  required string bundle_identifier = 2;
+  required string platform_device_identifier = 3;
+  required uint32 logged_in_user_id = 4;
+}

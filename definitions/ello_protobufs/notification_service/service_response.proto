@@ -1,0 +1,8 @@
+package ElloProtobufs.NotificationService;
+import 'ello_protobufs/notification_service/service_failure_reason.proto';
+
+message ServiceResponse {
+  required bool success = 1;
+  optional ServiceFailureReason failure_reason = 2 [default = UNSPECIFIED_REASON];
+  optional string failure_details = 3;
+}

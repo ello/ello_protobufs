@@ -27,7 +27,7 @@ module ElloProtobufs
     # Message Fields
     #
     class CreateNotificationRequest
-      required ::ElloProtobufs::NotificationType, :type, 1, :default => ::ElloProtobufs::NotificationType::UNSPECIFIED
+      required ::ElloProtobufs::NotificationType, :type, 1, :default => ::ElloProtobufs::NotificationType::UNSPECIFIED_TYPE
       required :uint32, :destination_user_id, 2
       optional ::ElloProtobufs::Post, :post, 3
       optional ::ElloProtobufs::User, :user, 4
