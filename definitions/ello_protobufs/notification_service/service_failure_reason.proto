@@ -1,0 +1,15 @@
+package ElloProtobufs.NotificationService;
+
+enum ServiceFailureReason {
+  /* DO NOT RE-INDEX THESE ENUMS FOR ORGANIZATION */
+
+  /* generic */
+  UNSPECIFIED_REASON = 0;
+
+  /* create notification */
+  UNKNOWN_NOTIFICATION_TYPE = 1;
+
+  /* create/delete device subscription */
+  UNKNOWN_NOTIFICATION_PLATFORM = 2;
+  PLATFORM_COMMUNICATION_ERROR = 3;
+}

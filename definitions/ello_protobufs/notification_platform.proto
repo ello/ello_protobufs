@@ -1,0 +1,7 @@
+package ElloProtobufs;
+
+enum NotificationPlatform {
+  UNSPECIFIED_PLATFORM = 0;
+  APNS = 1;
+  GCM = 2;
+}

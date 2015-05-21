@@ -1,0 +1,26 @@
+# encoding: utf-8
+
+##
+# This file is auto-generated. DO NOT EDIT!
+#
+require 'protobuf/message'
+
+module ElloProtobufs
+
+  ##
+  # Enum Classes
+  #
+  class NotificationType < ::Protobuf::Enum
+    define :UNSPECIFIED_TYPE, 0
+    define :COMMENT_MENTION, 1
+    define :FOLLOWER, 2
+    define :INVITE_REDEMPTION, 3
+    define :POST_COMMENT, 4
+    define :POST_MENTION, 5
+    define :REPOST, 6
+    define :REPOST_COMMENT_TO_ORIGINAL_AUTHOR, 7
+    define :REPOST_COMMENT_TO_REPOST_AUTHOR, 8
+  end
+
+end
+
