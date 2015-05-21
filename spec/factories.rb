@@ -24,19 +24,19 @@ FactoryGirl.define do
     updated_at { Time.now.to_i }
 
     trait :repost do
-      reposted_source_id { generate(:protobuf_id) }
+      reposted_source { create(:protobuf_post) }
     end
 
     trait :reposted_repost do
-      reposted_source_id { generate(:protobuf_id) }
-      reposted_via_id { generate(:protobuf_id) }
+      reposted_source { create(:protobuf_post) }
+      reposted_via { create(:protobuf_post) }
     end
   end
 
   factory :protobuf_comment, class: ElloProtobufs::Comment do
     skip_create
     id { generate(:protobuf_id) }
-    parent_post_id { generate(:protobuf_id) }
+    parent_post { create(:protobuf_post) }
     token { SecureRandom.uuid }
     author { create(:protobuf_user) }
     created_at { Time.now.to_i }
