@@ -18,6 +18,8 @@ module ElloProtobufs
     define :POST_COMMENT, 4
     define :POST_MENTION, 5
     define :REPOST, 6
+    define :REPOST_COMMENT_TO_ORIGINAL_AUTHOR, 7
+    define :REPOST_COMMENT_TO_REPOST_AUTHOR, 8
   end
 
 end
