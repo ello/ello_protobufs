@@ -10,6 +10,7 @@ require 'protobuf/message'
 # Imports
 #
 require 'ello_protobufs/user.pb'
+require 'ello_protobufs/post.pb'
 
 module ElloProtobufs
 
@@ -24,7 +25,7 @@ module ElloProtobufs
   #
   class Comment
     required :uint32, :id, 1
-    required :uint32, :parent_post_id, 2
+    required ::ElloProtobufs::Post, :parent_post, 2
     required :string, :token, 3
     required ::ElloProtobufs::User, :author, 4
     required :uint64, :created_at, 5

@@ -29,8 +29,8 @@ module ElloProtobufs
     required ::ElloProtobufs::User, :author, 4
     required :uint64, :created_at, 5
     required :uint64, :updated_at, 6
-    optional :uint32, :reposted_source_id, 7
-    optional :uint32, :reposted_via_id, 8
+    optional ::ElloProtobufs::Post, :reposted_source, 7
+    optional ::ElloProtobufs::Post, :reposted_via, 8
   end
 
 end
