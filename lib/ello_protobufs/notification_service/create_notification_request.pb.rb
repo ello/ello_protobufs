@@ -9,10 +9,11 @@ require 'protobuf/message'
 ##
 # Imports
 #
-require 'ello_protobufs/user.pb'
 require 'ello_protobufs/comment.pb'
-require 'ello_protobufs/post.pb'
+require 'ello_protobufs/love.pb'
 require 'ello_protobufs/notification_type.pb'
+require 'ello_protobufs/post.pb'
+require 'ello_protobufs/user.pb'
 
 module ElloProtobufs
   module NotificationService
@@ -32,6 +33,7 @@ module ElloProtobufs
       optional ::ElloProtobufs::Post, :post, 3
       optional ::ElloProtobufs::User, :user, 4
       optional ::ElloProtobufs::Comment, :comment, 5
+      optional ::ElloProtobufs::Love, :love, 6
     end
 
   end

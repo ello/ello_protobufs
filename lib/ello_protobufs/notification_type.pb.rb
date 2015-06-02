@@ -20,6 +20,9 @@ module ElloProtobufs
     define :REPOST, 6
     define :REPOST_COMMENT_TO_ORIGINAL_AUTHOR, 7
     define :REPOST_COMMENT_TO_REPOST_AUTHOR, 8
+    define :POST_LOVE, 9
+    define :REPOST_LOVE_TO_ORIGINAL_AUTHOR, 10
+    define :REPOST_LOVE_TO_REPOST_AUTHOR, 11
   end
 
 end

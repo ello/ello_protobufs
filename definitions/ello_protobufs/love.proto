@@ -1,0 +1,12 @@
+package ElloProtobufs;
+import 'ello_protobufs/user.proto';
+import 'ello_protobufs/post.proto';
+
+message Love {
+  required uint32 id = 1;
+  required User user = 2;
+  required Post post = 3;
+  required bool deleted = 4;
+  required uint64 created_at = 5;
+  required uint64 updated_at = 6;
+}

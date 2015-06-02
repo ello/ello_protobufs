@@ -42,4 +42,14 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_love, class: ElloProtobufs::Love do
+    skip_create
+    id { generate(:protobuf_id) }
+    user { create(:protobuf_user) }
+    post { create(:protobuf_post) }
+    deleted false
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
