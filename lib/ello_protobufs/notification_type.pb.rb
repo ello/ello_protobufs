@@ -23,6 +23,7 @@ module ElloProtobufs
     define :POST_LOVE, 9
     define :REPOST_LOVE_TO_ORIGINAL_AUTHOR, 10
     define :REPOST_LOVE_TO_REPOST_AUTHOR, 11
+    define :RESET_BADGE_COUNT, 12
   end
 
 end
