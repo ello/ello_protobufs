@@ -28,6 +28,8 @@ module ElloProtobufs
       required :string, :bundle_identifier, 2
       required :string, :platform_device_identifier, 3
       required :uint32, :logged_in_user_id, 4
+      optional :string, :marketing_version, 5
+      optional :string, :build_version, 6
     end
 
   end
