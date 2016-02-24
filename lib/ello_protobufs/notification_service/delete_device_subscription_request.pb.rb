@@ -27,7 +27,7 @@ module ElloProtobufs
       required ::ElloProtobufs::NotificationPlatform, :platform, 1, :default => ::ElloProtobufs::NotificationPlatform::UNSPECIFIED_PLATFORM
       required :string, :bundle_identifier, 2
       required :string, :platform_device_identifier, 3
-      required :uint32, :logged_in_user_id, 4
+      optional :uint32, :logged_in_user_id, 4
       optional :string, :marketing_version, 5
       optional :string, :build_version, 6
     end
