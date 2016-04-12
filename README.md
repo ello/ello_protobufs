@@ -1,4 +1,17 @@
+<img
+src="http://d324imu86q1bqn.cloudfront.net/uploads/user/avatar/641/large_Ello.1000x1000.png"
+width="200px" height="200px" />
+
 # Ello Proto Buffers
+
+[![Build
+Status](https://travis-ci.org/ello/ello_protobufs.svg?branch=master)](https://travis-ci.org/ello/ello_protobufs)
+[![Code
+Climate](https://codeclimate.com/github/ello/ello_protobufs/badges/gpa.svg)](https://codeclimate.com/github/ello/ello_protobufs)
+[![Security](https://hakiri.io/github/ello/ello_protobufs/master.svg)](https://hakiri.io/github/ello/ello_protobufs/master)
+[![Dependencies](https://img.shields.io/gemnasium/ello/ello_protobufs.svg)](https://gemnasium.com/ello/ello_protobufs)
+
+
 
 This gem includes the protobuf definitions and compiled protobuf data
 transfer objects for the Ello domain.  The intent of this library
@@ -170,3 +183,9 @@ class CarsController < ApplicationController
 
 end
 ```
+
+## License
+Ello Protobufs is released under the [MIT License](blob/master/LICENSE.txt)
+
+## Code of Conduct
+Ello was created by idealists who believe that the essential nature of all human beings is to be kind, considerate, helpful, intelligent, responsible, and respectful of others. To that end, we will be enforcing [the Ello rules](https://ello.co/wtf/policies/rules/) within all of our open source projects. If you don’t follow the rules, you risk being ignored, banned, or reported for abuse.
