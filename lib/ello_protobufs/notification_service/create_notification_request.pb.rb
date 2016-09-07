@@ -14,6 +14,7 @@ require 'ello_protobufs/love.pb'
 require 'ello_protobufs/notification_type.pb'
 require 'ello_protobufs/post.pb'
 require 'ello_protobufs/user.pb'
+require 'ello_protobufs/watch.pb'
 
 module ElloProtobufs
   module NotificationService
@@ -34,6 +35,7 @@ module ElloProtobufs
       optional ::ElloProtobufs::User, :user, 4
       optional ::ElloProtobufs::Comment, :comment, 5
       optional ::ElloProtobufs::Love, :love, 6
+      optional ::ElloProtobufs::Watch, :watch, 7
     end
 
   end
