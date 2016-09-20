@@ -52,4 +52,13 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_watch, class: ElloProtobufs::Watch do
+    skip_create
+    id { generate(:protobuf_id) }
+    user { create(:protobuf_user) }
+    post { create(:protobuf_post) }
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
