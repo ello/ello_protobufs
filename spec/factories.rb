@@ -61,4 +61,15 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_announcement, class: ElloProtobufs::Announcement do
+    skip_create
+    id { generate(:protobuf_id) }
+    header { "header" }
+    body { "body" }
+    cta_href { "http://asdf.com" }
+    cta_caption { "asdf" }
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
