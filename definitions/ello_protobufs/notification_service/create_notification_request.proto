@@ -5,6 +5,7 @@ import 'ello_protobufs/notification_type.proto';
 import 'ello_protobufs/post.proto';
 import 'ello_protobufs/user.proto';
 import 'ello_protobufs/watch.proto';
+import 'ello_protobufs/announcement.proto';
 
 message CreateNotificationRequest {
   required NotificationType type = 1 [default = UNSPECIFIED_TYPE];
@@ -14,4 +15,5 @@ message CreateNotificationRequest {
   optional Comment comment = 5;
   optional Love love = 6;
   optional Watch watch = 7;
+  optional Announcement announcement = 8;
 }
