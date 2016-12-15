@@ -5,16 +5,13 @@
 #
 require 'protobuf/message'
 
-##
-# Imports
-#
-
 module ElloProtobufs
 
   ##
   # Message Classes
   #
   class Announcement < ::Protobuf::Message; end
+
 
   ##
   # Message Fields
@@ -30,3 +27,4 @@ module ElloProtobufs
   end
 
 end
+

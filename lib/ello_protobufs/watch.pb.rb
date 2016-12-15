@@ -30,4 +30,6 @@ module ElloProtobufs
     required :uint64, :created_at, 4
     required :uint64, :updated_at, 5
   end
+
 end
+
