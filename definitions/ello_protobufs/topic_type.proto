@@ -1,0 +1,5 @@
+package ElloProtobufs;
+
+enum TopicType {
+  ANNOUNCEMENT_TOPIC = 1;
+}

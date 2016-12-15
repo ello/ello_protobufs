@@ -31,7 +31,7 @@ module ElloProtobufs
     #
     class CreateNotificationRequest
       required ::ElloProtobufs::NotificationType, :type, 1, :default => ::ElloProtobufs::NotificationType::UNSPECIFIED_TYPE
-      optional :uint32, :destination_user_id, 2
+      required :uint32, :destination_user_id, 2
       optional ::ElloProtobufs::Post, :post, 3
       optional ::ElloProtobufs::User, :user, 4
       optional ::ElloProtobufs::Comment, :comment, 5

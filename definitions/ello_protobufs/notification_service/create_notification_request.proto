@@ -9,7 +9,7 @@ import 'ello_protobufs/announcement.proto';
 
 message CreateNotificationRequest {
   required NotificationType type = 1 [default = UNSPECIFIED_TYPE];
-  optional uint32 destination_user_id = 2;
+  required uint32 destination_user_id = 2;
   optional Post post = 3;
   optional User user = 4;
   optional Comment comment = 5;
