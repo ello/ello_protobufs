@@ -12,4 +12,7 @@ enum ServiceFailureReason {
   /* create/delete device subscription */
   UNKNOWN_NOTIFICATION_PLATFORM = 2;
   PLATFORM_COMMUNICATION_ERROR = 3;
+
+  /* create topic notificaion */
+  UNKNOWN_TOPIC_TYPE = 4;
 }
