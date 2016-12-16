@@ -1,0 +1,8 @@
+package ElloProtobufs.NotificationService;
+import 'ello_protobufs/topic_type.proto';
+import 'ello_protobufs/announcement.proto';
+
+message CreateTopicNotificationRequest {
+  required TopicType topic = 1 [default = ANNOUNCEMENT_TOPIC];
+  required Announcement announcement = 2;
+}
