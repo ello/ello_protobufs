@@ -38,6 +38,7 @@ module ElloProtobufs
       optional ::ElloProtobufs::Love, :love, 6
       optional ::ElloProtobufs::Watch, :watch, 7
       optional ::ElloProtobufs::Announcement, :announcement, 8
+      optional ::ElloProtobufs::ArtistInviteSubmission, :artist_invite_submission, 9
     end
 
   end

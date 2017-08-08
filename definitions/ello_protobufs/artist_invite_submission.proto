@@ -1,0 +1,9 @@
+package ElloProtobufs;
+import 'ello_protobufs/post.proto';
+
+message ArtistInviteSubmission {
+  required uint32 id = 1;
+  required Post post = 2;
+  required uint64 created_at = 3;
+  required uint64 updated_at = 4;
+}

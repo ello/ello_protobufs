@@ -29,6 +29,7 @@ module ElloProtobufs
     define :REPOST_WATCH_TO_REPOST_AUTHOR, 15
     define :POST_COMMENT_TO_WATCHER, 16
     define :ANNOUNCEMENT, 17
+    define :ARTIST_INVITE_SUBMISSION_APPROVED, 18
   end
 
 end
