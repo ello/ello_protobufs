@@ -16,6 +16,7 @@ require 'ello_protobufs/post.pb'
 require 'ello_protobufs/user.pb'
 require 'ello_protobufs/watch.pb'
 require 'ello_protobufs/announcement.pb'
+require 'ello_protobufs/artist_invite_submission.pb'
 
 module ElloProtobufs
   module NotificationService
