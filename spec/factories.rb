@@ -77,7 +77,7 @@ FactoryGirl.define do
     skip_create
     id { generate(:protobuf_id) }
     title { 'Artist Invite Title' }
-    href { "http://ello.co/artist-invites/my-slug" }
+    href { "notifications/artist-invites/my-slug" }
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
