@@ -72,4 +72,13 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_artist_invite_submission, class: ElloProtobufs::ArtistInviteSubmission do
+    skip_create
+    id { generate(:protobuf_id) }
+    title { 'Artist Invite Title' }
+    href { "notifications/artist-invites/my-slug" }
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
