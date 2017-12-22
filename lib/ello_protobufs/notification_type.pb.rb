@@ -30,6 +30,7 @@ module ElloProtobufs
     define :POST_COMMENT_TO_WATCHER, 16
     define :ANNOUNCEMENT, 17
     define :ARTIST_INVITE_SUBMISSION_APPROVED, 18
+    define :APPROVED_ARTIST_INVITE_SUBMISSION_FOR_FOLLOWERS, 19
   end
 
 end
