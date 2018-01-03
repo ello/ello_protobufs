@@ -24,9 +24,9 @@ module ElloProtobufs
   #
   class ArtistInviteSubmission
     required :uint32, :id, 1
-    required :string, :title, 2
-    required :string, :href, 3
-    required :string, :author_username, 4
+    required ::ElloProtobufs::Post, :post, 2
+    required :string, :title, 3
+    required :string, :href, 4
     required :uint64, :created_at, 5
     required :uint64, :updated_at, 6
   end
