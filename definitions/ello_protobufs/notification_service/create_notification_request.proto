@@ -6,6 +6,7 @@ import 'ello_protobufs/post.proto';
 import 'ello_protobufs/user.proto';
 import 'ello_protobufs/watch.proto';
 import 'ello_protobufs/announcement.proto';
+import 'ello_protobufs/artist_invite_submission.proto';
 import 'ello_protobufs/category_post.proto';
 
 message CreateNotificationRequest {
@@ -17,5 +18,6 @@ message CreateNotificationRequest {
   optional Love love = 6;
   optional Watch watch = 7;
   optional Announcement announcement = 8;
-  optional CategoryPost category_post = 9;
+  optional ArtistInviteSubmission artist_invite_submission = 9;
+  optional CategoryPost category_post = 10;
 }
