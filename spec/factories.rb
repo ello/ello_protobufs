@@ -82,4 +82,25 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_category, class: ElloProtobufs::Category do
+    skip_create
+    id { generate(:protobuf_id) }
+    title { 'Category Name' }
+    slug { 'category_name' }
+  end
+
+  factory :protobuf_category_post, class: ElloProtobufs::CategoryPost do
+    skip_create
+    id { generate(:protobuf_id) }
+    post { create(:protobuf_post) }
+    category { create(:protobuf_category) }
+    status { 'featured' }
+    submitted_by { create(:protobuf_user) }
+    submitted_at { Time.now.to_i }
+    featured_by { create(:protobuf_user) }
+    featured_at { Time.now.to_i }
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
