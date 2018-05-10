@@ -1,0 +1,7 @@
+package ElloProtobufs;
+
+message Category {
+  required uint32 id = 1;
+  required string slug = 2;
+  required string title = 3;
+}
