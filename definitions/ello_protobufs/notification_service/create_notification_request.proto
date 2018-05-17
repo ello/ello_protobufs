@@ -8,6 +8,7 @@ import 'ello_protobufs/watch.proto';
 import 'ello_protobufs/announcement.proto';
 import 'ello_protobufs/artist_invite_submission.proto';
 import 'ello_protobufs/category_post.proto';
+import 'ello_protobufs/category_user.proto';
 
 message CreateNotificationRequest {
   required NotificationType type = 1 [default = UNSPECIFIED_TYPE];
@@ -20,4 +21,5 @@ message CreateNotificationRequest {
   optional Announcement announcement = 8;
   optional ArtistInviteSubmission artist_invite_submission = 9;
   optional CategoryPost category_post = 10;
+  optional CategoryUser category_user = 11;
 }

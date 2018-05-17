@@ -103,4 +103,14 @@ FactoryGirl.define do
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end
+
+  factory :protobuf_category_user, class: ElloProtobufs::CategoryUser do
+    skip_create
+    id { generate(:protobuf_id) }
+    user { create(:protobuf_user) }
+    category { create(:protobuf_category) }
+    role { 'featured' }
+    created_at { Time.now.to_i }
+    updated_at { Time.now.to_i }
+  end
 end
