@@ -34,6 +34,7 @@ module ElloProtobufs
     define :FEATURED_CATEGORY_POST, 20
     define :FEATURED_CATEGORY_REPOST, 21
     define :FEATURED_CATEGORY_POST_VIA_REPOST, 22
+    define :USER_ADDED_AS_CURATOR, 23
   end
 
 end
