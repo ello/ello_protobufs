@@ -2,11 +2,14 @@ package ElloProtobufs;
 import 'ello_protobufs/user.proto';
 import 'ello_protobufs/category.proto';
 
-message CategoryPost {
+message CategoryUser {
   required uint32 id = 1;
   required string role = 2;
   required User user = 3;
   required Category category = 4;
   required uint64 created_at = 5;
   required uint64 updated_at = 6;
+  required User featured_by = 7;
+  required User curator_by = 8;
+  required User moderator_by = 9;
 }
