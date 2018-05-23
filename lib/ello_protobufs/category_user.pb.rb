@@ -30,9 +30,9 @@ module ElloProtobufs
     required ::ElloProtobufs::Category, :category, 4
     required :uint64, :created_at, 5
     required :uint64, :updated_at, 6
-    required ::ElloProtobufs::User, :featured_by, 7
-    required ::ElloProtobufs::User, :curator_by, 8
-    required ::ElloProtobufs::User, :moderator_by, 9
+    optional ::ElloProtobufs::User, :featured_by, 7
+    optional ::ElloProtobufs::User, :curator_by, 8
+    optional ::ElloProtobufs::User, :moderator_by, 9
   end
 
 end
