@@ -1,0 +1,15 @@
+package ElloProtobufs;
+import 'ello_protobufs/user.proto';
+import 'ello_protobufs/category.proto';
+
+message CategoryUser {
+  required uint32 id = 1;
+  required string role = 2;
+  required User user = 3;
+  required Category category = 4;
+  required uint64 created_at = 5;
+  required uint64 updated_at = 6;
+  optional User featured_by = 7;
+  optional User curator_by = 8;
+  optional User moderator_by = 9;
+}

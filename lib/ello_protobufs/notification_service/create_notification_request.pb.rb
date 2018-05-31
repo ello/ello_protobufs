@@ -18,6 +18,7 @@ require 'ello_protobufs/watch.pb'
 require 'ello_protobufs/announcement.pb'
 require 'ello_protobufs/artist_invite_submission.pb'
 require 'ello_protobufs/category_post.pb'
+require 'ello_protobufs/category_user.pb'
 
 module ElloProtobufs
   module NotificationService
@@ -42,6 +43,7 @@ module ElloProtobufs
       optional ::ElloProtobufs::Announcement, :announcement, 8
       optional ::ElloProtobufs::ArtistInviteSubmission, :artist_invite_submission, 9
       optional ::ElloProtobufs::CategoryPost, :category_post, 10
+      optional ::ElloProtobufs::CategoryUser, :category_user, 11
     end
 
   end
