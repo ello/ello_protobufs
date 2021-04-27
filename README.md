@@ -2,7 +2,7 @@
 
 # Ello Proto Buffers
 
-[![Build Status](https://travis-ci.org/ello/ello_protobufs.svg?branch=master)](https://travis-ci.com/ello/ello_protobufs)
+[![Build Status](https://travis-ci.org/ello/ello_protobufs.svg?branch=main)](https://travis-ci.com/ello/ello_protobufs)
 [![Code Climate](https://codeclimate.com/github/ello/ello_protobufs/badges/gpa.svg)](https://codeclimate.com/github/ello/ello_protobufs)
 
 This gem includes the protobuf definitions and compiled protobuf data transfer
@@ -177,7 +177,7 @@ end
 
 ## License
 
-Ello Protobufs is released under the [MIT License](blob/master/LICENSE.txt)
+Ello Protobufs is released under the [MIT License](blob/main/LICENSE.txt)
 
 ## Code of Conduct
 
