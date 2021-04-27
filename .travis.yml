@@ -1,6 +1,6 @@
 language: ruby
 cache:
-- bundler
+  - bundler
 rvm: 2.3.1
 notifications:
   email: false

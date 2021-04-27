@@ -1,29 +1,20 @@
-<img
-src="http://d324imu86q1bqn.cloudfront.net/uploads/user/avatar/641/large_Ello.1000x1000.png"
-width="200px" height="200px" />
+<img src="http://d324imu86q1bqn.cloudfront.net/uploads/user/avatar/641/large_Ello.1000x1000.png" width="200px" height="200px" />
 
 # Ello Proto Buffers
 
-[![Build
-Status](https://travis-ci.org/ello/ello_protobufs.svg?branch=master)](https://travis-ci.org/ello/ello_protobufs)
-[![Code
-Climate](https://codeclimate.com/github/ello/ello_protobufs/badges/gpa.svg)](https://codeclimate.com/github/ello/ello_protobufs)
-[![Security](https://hakiri.io/github/ello/ello_protobufs/master.svg)](https://hakiri.io/github/ello/ello_protobufs/master)
-[![Dependencies](https://img.shields.io/gemnasium/ello/ello_protobufs.svg)](https://gemnasium.com/ello/ello_protobufs)
+[![Build Status](https://travis-ci.org/ello/ello_protobufs.svg?branch=master)](https://travis-ci.com/ello/ello_protobufs)
+[![Code Climate](https://codeclimate.com/github/ello/ello_protobufs/badges/gpa.svg)](https://codeclimate.com/github/ello/ello_protobufs)
 
+This gem includes the protobuf definitions and compiled protobuf data transfer
+objects for the Ello domain. The intent of this library is to provide a common
+way to serialize/transfer Ello domain objects between services.
 
-
-This gem includes the protobuf definitions and compiled protobuf data
-transfer objects for the Ello domain.  The intent of this library
-is to provide a common way to serialize/transfer Ello domain
-objects between services.
-
-For more information on Protocol Buffers, check the [Google Developer
-resoruces](https://developers.google.com/protocol-buffers/).
+For more information on Protocol Buffers, check the
+[Google Developer resoruces](https://developers.google.com/protocol-buffers/).
 
 ## Installation
 
-Add this line to the application's Gemfile:
+Add this line to the application’s Gemfile:
 
 ```ruby
 gem 'ello_protobufs'
@@ -37,40 +28,40 @@ $ bundle
 
 ## Usage
 
-Once added to your `Gemfile`, the protobufs will be available under
-the `ElloProtobufs` namespace.  Behind the scenes, we're using
-[localshred/protobuf](https://github.com/localshred/protobuf) for
-the actual protobuf serialization/deserialization.
+Once added to your `Gemfile`, the protobufs will be available under the
+`ElloProtobufs` namespace. Behind the scenes, we’re using
+[localshred/protobuf](https://github.com/localshred/protobuf) for the actual
+protobuf serialization/deserialization.
 
-The gem provides some FactoryGirl factories for testing purposes in
-implementing applications.  These can be loaded into your project by
-adding `ElloProtobufs.load_protobuf_factories` in your `spec_helper.rb`
-or `rails_helper.rb`.
+The gem provides some FactoryGirl factories for testing purposes in implementing
+applications. These can be loaded into your project by adding
+`ElloProtobufs.load_protobuf_factories` in your `spec_helper.rb` or
+`rails_helper.rb`.
 
 ## Development Requirements
 
-- Protobuf 2.5.0 -- `brew tap homebrew/versions && brew install protobuf`
+- Protobuf – `brew install protobuf`
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies.
-Then run `bundle exec console` for an interactive prompt that will allow
-you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then run
+`bundle exec console` for an interactive prompt that will allow you to
+experiment.
 
-To regenerate definitions, run `rake ello_protobufs:compile`.  Sometimes
-you need to clean the definitions, especially when prototyping new
-messages that you rename multiple times.  To clean all definitions run
-`rake ello_protobufs::clean`.  **NOTE:** Be sure to re-compile after a
-clean as the clean deletes all defintions.
+To regenerate definitions, run `rake ello_protobufs:compile`. Sometimes you need
+to clean the definitions, especially when prototyping new messages that you
+rename multiple times. To clean all definitions run `rake ello_protobufs::clean`
+. **NOTE:** Be sure to re-compile after a clean as the clean deletes all
+defintions.
 
 ## Definition Organization
 
 Protocol buffers are often used in tandem with a rich RPC server for
-cross-service communication.  We have decided to opt-out of a generated
-RPC server and instead have Rails operate as the server while still
-having request/response objects for RPC calls.
+cross-service communication. We have decided to opt-out of a generated RPC
+server and instead have Rails operate as the server while still having
+request/response objects for RPC calls.
 
-The code organization convention that we're going with is:
+The code organization convention that we’re going with is:
 
 ```ruby
 # parent namespace: contains primary domain objects, shared enums -- things used by multiple services
@@ -85,14 +76,14 @@ ElloProtobufs::SomeSpecialService::CreateCarRequest
 # RPC response object containing information about the creation of a car using SomeSpecialService
 ElloProtobufs::SomeSpecialService::ServiceResponse
 
-# service specific enum to specify the status of the car creation operation -- NOTE: this is preferable to text error messages as it's more discrete and doesn't require parsing
+# service specific enum to specify the status of the car creation operation -- NOTE: this is preferable to text error messages as it’s more discrete and doesn’t require parsing
 ElloProtobufs::SomeSpecialService::ServiceFailureReason
 ```
 
 ## Implementation Guide
 
-Below is a simple example of how you might use this gem for
-bi-directional communcation in a service.
+Below is a simple example of how you might use this gem for bi-directional
+communcation in a service.
 
 ```ruby
 # config/initializers/protobuf.rb
@@ -185,7 +176,14 @@ end
 ```
 
 ## License
+
 Ello Protobufs is released under the [MIT License](blob/master/LICENSE.txt)
 
 ## Code of Conduct
-Ello was created by idealists who believe that the essential nature of all human beings is to be kind, considerate, helpful, intelligent, responsible, and respectful of others. To that end, we will be enforcing [the Ello rules](https://ello.co/wtf/policies/rules/) within all of our open source projects. If you don’t follow the rules, you risk being ignored, banned, or reported for abuse.
+
+Ello was created by idealists who believe that the essential nature of all human
+beings is to be kind, considerate, helpful, intelligent, responsible, and
+respectful of others. To that end, we will be enforcing
+[the Ello rules](https://ello.co/wtf/policies/rules/) within all of our open
+source projects. If you don’t follow the rules, you risk being ignored, banned,
+or reported for abuse.
