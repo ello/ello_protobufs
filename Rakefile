@@ -18,9 +18,9 @@ task :console do
   require 'ello_protobufs'
   require 'pry'
   require 'faker'
-  require 'factory_girl'
+  require 'factory_bot'
 
-  FactoryGirl.reload
+  FactoryBot.reload
   ARGV.clear
   ::Pry.start
 end

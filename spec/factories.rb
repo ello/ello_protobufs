@@ -1,7 +1,7 @@
 require 'securerandom'
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   sequence(:protobuf_id)
 
   factory :protobuf_user, class: ElloProtobufs::User do
@@ -48,7 +48,7 @@ FactoryGirl.define do
     id { generate(:protobuf_id) }
     user { create(:protobuf_user) }
     post { create(:protobuf_post) }
-    deleted false
+    deleted { false }
     created_at { Time.now.to_i }
     updated_at { Time.now.to_i }
   end

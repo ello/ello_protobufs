@@ -33,7 +33,7 @@ Once added to your `Gemfile`, the protobufs will be available under the
 [localshred/protobuf](https://github.com/localshred/protobuf) for the actual
 protobuf serialization/deserialization.
 
-The gem provides some FactoryGirl factories for testing purposes in implementing
+The gem provides some FactoryBot factories for testing purposes in implementing
 applications. These can be loaded into your project by adding
 `ElloProtobufs.load_protobuf_factories` in your `spec_helper.rb` or
 `rails_helper.rb`.

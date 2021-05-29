@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'factory_girl'
+  spec.add_development_dependency 'factory_bot'
   spec.add_development_dependency 'faker'
   spec.add_development_dependency 'guard'
   spec.add_development_dependency 'guard-rspec'
